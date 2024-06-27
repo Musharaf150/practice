@@ -1,11 +1,13 @@
 import React from 'react';
 import logo from '../assets/logo.png';
-import { Link } from 'react-router-dom';
-import Button from './Button';
+import { Button } from "@/components/ui/button"
+import MobileNav from './MobileNav';
+
 const Navbar = () => {
   return (
-    <nav className='wrapper flex w-full pt-6 z-10  items-center justify-between px-6'>
-        <img className='h-10 w-auto' src={logo} alt='logo' />
+    <nav className='wrapper flex w-full pt-6 z-10  items-center justify-between px-10'>
+        <MobileNav/>
+        <img className='md:visible invisible md:h-10 md:w-auto' src={logo} alt='logo' />
         <div>
             <ul className='gap-6 hidden md:flex'>
                 <li>
@@ -28,7 +30,9 @@ const Navbar = () => {
                 </li>
             </ul>
         </div>
-        <Button color='text-pink-400' title='Login'/>
+        <Button className="text-pink-500 bg-slate-400" variant="outline">Login</Button>
+
+        
 
     </nav>
   )
